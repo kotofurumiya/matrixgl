@@ -137,7 +137,7 @@
 <span class="hljs-keyword">const</span> view = Matrix4.lookAt(camera, lookAt, cameraUpDirection);
 </code></pre>
 				<p>If you need a projection matrix, use <code>orthographic</code> or <code>perspective</code> method.</p>
-				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> orthogonal = Matrix4.orthogonal({
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> orthogonal = Matrix4.orthographic({
   <span class="hljs-attr">top</span>: <span class="hljs-number">1</span>,
   <span class="hljs-attr">bottom</span>: <span class="hljs-number">-1</span>,
   <span class="hljs-attr">left</span>: <span class="hljs-number">-1</span>,

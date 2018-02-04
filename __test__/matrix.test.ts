@@ -36,7 +36,7 @@ describe('Matrix4', () => {
     ], delta);
   });
 
-  test('Projection Matrix Orthogonal', () => {
+  test('Projection Matrix Orthographic', () => {
     const left   = -40;
     const right  = 40;
     const top    = 40;
