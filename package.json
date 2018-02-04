@@ -21,11 +21,11 @@
   },
   "bugs": {
     "url": "https://github.com/kotofurumiya/matrixgl/issues",
-    "email" : "kotofurumiya@gmail.com"
+    "email": "kotofurumiya@gmail.com"
   },
   "homepage": "https://github.com/kotofurumiya/matrixgl",
   "scripts": {
-    "typedoc": "typedoc ./src --out ./docs --readme README.md",
+    "typedoc": "typedoc ./src --out ./docs --readme README.md && nodetouch ./docs/.nojekyll",
     "test": "jest",
     "webpack": "webpack",
     "build": "tsc && npm run typedoc && webpack",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "@types/jest": "^22.1.1",
     "jest": "^22.1.4",
+    "touch": "^3.1.0",
     "ts-jest": "^22.0.3",
     "typedoc": "^0.10.0",
     "typescript": "^2.7.1",
