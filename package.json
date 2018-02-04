@@ -1,0 +1,56 @@
+{
+  "name": "matrixgl",
+  "version": "0.0.1",
+  "description": "Yet another matrix library for WebGL",
+  "keywords": [
+    "webgl",
+    "math",
+    "matrix",
+    "vector"
+  ],
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "author": "Koto Furumiya <kotofurumiya@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "lib/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kotofurumiya/matrixgl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kotofurumiya/matrixgl/issues",
+    "email" : "kotofurumiya@gmail.com"
+  },
+  "homepage": "https://github.com/kotofurumiya/matrixgl",
+  "scripts": {
+    "typedoc": "typedoc ./src --out ./docs --readme README.md",
+    "test": "jest",
+    "webpack": "webpack",
+    "build": "tsc && npm run typedoc && webpack",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.1.1",
+    "jest": "^22.1.4",
+    "ts-jest": "^22.0.3",
+    "typedoc": "^0.10.0",
+    "typescript": "^2.7.1",
+    "webpack": "^3.10.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
