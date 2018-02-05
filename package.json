@@ -28,8 +28,7 @@
     "typedoc": "typedoc ./src --out ./docs --readme README.md && nodetouch ./docs/.nojekyll",
     "test": "jest",
     "webpack": "webpack",
-    "build": "tsc && npm run typedoc && webpack",
-    "prepare": "npm run build"
+    "build": "tsc && npm run typedoc && webpack"
   },
   "devDependencies": {
     "@types/jest": "^22.1.1",
