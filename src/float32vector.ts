@@ -115,6 +115,7 @@ export class Float32Vector3 extends Vector3Base<Float32Array> {
    */
   normalize(): Float32Vector3 {
     const mag: number = this.magnitude;
+    if(mag === 0) { return this; }
     return new Float32Vector3(this.x / mag, this.y / mag, this.z / mag);
   }
 }

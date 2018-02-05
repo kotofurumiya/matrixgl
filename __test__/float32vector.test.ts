@@ -76,6 +76,11 @@ describe('Vector3', () => {
     const vec = new Vector3(1.05, 3.47, 7.43);
     expect(vec.normalize().values).arrayToBeCloseTo([0.127006, 0.419726, 0.898721], delta);
   });
+
+  test('Normal Zero Vector3', () => {
+    const vec = new Vector3(0.0, 0.0, 0.0);
+    expect(vec.normalize().values).arrayToBeCloseTo([0.0, 0.0, 0.0], delta);
+  });
 });
 
 //
