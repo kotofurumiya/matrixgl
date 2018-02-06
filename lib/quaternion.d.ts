@@ -10,7 +10,7 @@ export declare class Quaternion {
     /**
      * Create a rotation quaternion around `normalizedAxis`.
      * `normalizedAxis` must be normalized.
-     * @param {Float32Vector4} normalizedAxis
+     * @param {Float32Vector3} normalizedAxis
      * @param {number} radian
      * @returns {Quaternion}
      */
