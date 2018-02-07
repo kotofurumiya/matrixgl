@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0
+
+* Add a Quaternion class.
+
 ## 0.0.3
 
 * Fix Vector3.normalize() returns NaN if its magnitude is zero.

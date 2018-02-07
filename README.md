@@ -160,6 +160,18 @@ const q = Quaternion.rotationAround(axis, radian);
 const rotation = q.toRotationMatrix4();
 ```
 
+To interpolate between two quaternions, use `slerp(other, t)`.
+
+```javascript
+// To interpolate quaternions, they must be normalized.
+const q1 = new Quaternion(1, 2, 3, 4).normalize();
+const q2 = new Quaternion(5, 6, 7, 8).normalize();
+
+// interpolate with t = 0.5.
+// t is from 0.0 to 1.0. 
+const interpolated = q1.slerp(q2, 0.5);
+```
+
 ## Usage with WebGL
 
 You can get `Float32Array` from `values` property of vectors or matrices.
