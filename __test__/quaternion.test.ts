@@ -31,4 +31,13 @@ describe('Quaternion', () => {
     const normalized = new Quaternion(0, 0, 0, 0);
     expect(normalized.values).arrayToBeCloseTo([0, 0, 0, 0], delta);
   });
+
+  test('slerp', () => {
+    const q1 = new Quaternion(1, 2, 3, 4).normalize();
+    const q2 = new Quaternion(5, 6, 7, 8).normalize();
+    const s = q1.slerp(q2, 0.123);
+    const expected = [0.20761071976221868, 0.37753696937382647, 0.5474632189854343, 0.717389468597042];
+
+    expect(s.values).arrayToBeCloseTo(expected, delta);
+  });
 });

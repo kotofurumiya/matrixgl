@@ -21,6 +21,38 @@ export declare class Quaternion {
      */
     normalize(): Quaternion;
     /**
+     * Adds the `other` to the quaternion and returns the sum.
+     *
+     * This method does not mutate the quaternion.
+     * @param {Quaternion} other
+     * @returns {Quaternion}
+     */
+    add(other: Quaternion): Quaternion;
+    /**
+     * Multiplies the quaternion by `scalar` and returns the product.
+     *
+     * This method does not mutate the quaternion.
+     * @param {number} scalar
+     * @returns {Quaternion}
+     */
+    mulByScalar(scalar: number): Quaternion;
+    /**
+     * Calculates dot product.
+     * @param {Quaternion} other
+     * @returns {number}
+     */
+    dot(other: Quaternion): number;
+    /**
+     * Calculates spherical linear interpolation(also known as Slerp) and returns new `Quaternion` between the quaternion and the other.
+     * @param {Quaternion} other
+     * @param {number} t 0.0 <= t <= 1.0
+     * @param {{chooseShorterAngle: boolean}} options Does not work currently. slerp chooses shorter angle regardless of this value.
+     * @returns {Quaternion}
+     */
+    slerp(other: Quaternion, t: number, options?: {
+        chooseShorterAngle: boolean;
+    }): Quaternion;
+    /**
      * Calc magnitude of the quaternion.
      * @returns {number}
      */

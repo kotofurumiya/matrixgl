@@ -37,6 +37,64 @@ export class Quaternion {
   }
 
   /**
+   * Adds the `other` to the quaternion and returns the sum.
+   *
+   * This method does not mutate the quaternion.
+   * @param {Quaternion} other
+   * @returns {Quaternion}
+   */
+  add(other: Quaternion): Quaternion {
+    return new Quaternion(this.x + other.x, this.y + other.y, this.z + other.z, this.w + other.w);
+  }
+
+  /**
+   * Multiplies the quaternion by `scalar` and returns the product.
+   *
+   * This method does not mutate the quaternion.
+   * @param {number} scalar
+   * @returns {Quaternion}
+   */
+  mulByScalar(scalar: number): Quaternion {
+    return new Quaternion(this.x * scalar, this.y * scalar, this.z * scalar, this.w * scalar);
+  }
+
+  /**
+   * Calculates dot product.
+   * @param {Quaternion} other
+   * @returns {number}
+   */
+  dot(other: Quaternion): number {
+    return this.x * other.x + this.y * other.y + this.z * other.z + this.w * other.w;
+  }
+
+  /**
+   * Calculates spherical linear interpolation(also known as Slerp) and returns new `Quaternion` between the quaternion and the other.
+   * @param {Quaternion} other
+   * @param {number} t 0.0 <= t <= 1.0
+   * @param {{chooseShorterAngle: boolean}} options Does not work currently. slerp chooses shorter angle regardless of this value.
+   * @returns {Quaternion}
+   */
+  slerp(other: Quaternion , t: number, options: { chooseShorterAngle: boolean } = { chooseShorterAngle: true }): Quaternion {
+    let dotProd: number = this.dot(other);
+    let otherQuaternion: Quaternion = other;
+
+    // When the dot product is negative, slerp chooses the longer way.
+    // So we should negate the `other` quaternion.
+    if(dotProd < 0) {
+      dotProd = -dotProd;
+      otherQuaternion = other.mulByScalar(-1);
+    }
+
+    const omega: number = Math.acos(dotProd);
+    const sinOmega: number = Math.sin(omega);
+
+    const q1: Quaternion = this.mulByScalar(Math.sin((1 - t) * omega) / sinOmega);
+    const q2: Quaternion = otherQuaternion.mulByScalar(Math.sin(t * omega) / sinOmega);
+
+    return q1.add(q2);
+  }
+
+  /**
    * Calc magnitude of the quaternion.
    * @returns {number}
    */
