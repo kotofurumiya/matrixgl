@@ -28,7 +28,7 @@ describe('Quaternion', () => {
   });
 
   test('normalize with zero norm', () => {
-    const normalized = new Quaternion(0, 0, 0, 0);
+    const normalized = new Quaternion(0, 0, 0, 0).normalize();
     expect(normalized.values).arrayToBeCloseTo([0, 0, 0, 0], delta);
   });
 
