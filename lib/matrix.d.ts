@@ -189,6 +189,15 @@ export declare class Matrix4x4 implements Matrix {
      * @returns {Matrix4x4}
      */
     rotateZ(radian: number): Matrix4x4;
+    /**
+     * Rotate the matrix around the `normalizedAxis` and return new Matrix4x4.
+     *
+     * This method does not mutate the matrix.
+     * @param {Float32Vector3} normalizedAxis
+     * @param {number} radian
+     * @returns {Matrix4x4}
+     */
+    rotateAround(normalizedAxis: Float32Vector3, radian: number): Matrix4x4;
     readonly values: Float32Array;
     toString(): string;
 }

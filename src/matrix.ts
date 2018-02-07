@@ -422,6 +422,19 @@ export class Matrix4x4 implements Matrix {
     return this.mulByMatrix4x4(rz);
   }
 
+  /**
+   * Rotate the matrix around the `normalizedAxis` and return new Matrix4x4.
+   *
+   * This method does not mutate the matrix.
+   * @param {Float32Vector3} normalizedAxis
+   * @param {number} radian
+   * @returns {Matrix4x4}
+   */
+  rotateAround(normalizedAxis: Float32Vector3, radian: number): Matrix4x4 {
+    const r = Matrix4x4.rotationAround(normalizedAxis, radian);
+    return this.mulByMatrix4x4(r);
+  }
+
   get values(): Float32Array {
     return this._values;
   }

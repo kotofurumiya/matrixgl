@@ -107,11 +107,17 @@ const model = identity.mulByMatrix4(translation)
                        .mulByMatrix4(scaling);
 ```
 
-If you want a rotation matrix about an arbitrary axis, use `Matrix4.rotationAround(axis, radian)`.
-
+If you want a rotation matrix about an arbitrary axis, use `rotateAround(axis, radian)` .
 ```javascript
 // An axis vector must be normalized.
 const axis = new Vector3(1, 2, 3).normalize();
+const rotation = Matrix4.identity()
+                         .rotateAround(axis, Math.PI);
+```
+
+or use `Matrix4.rotationAround(axis, radian)`.
+
+```javascript
 const rotation = Matrix4.rotationAround(axis, Math.PI);
 ```
 

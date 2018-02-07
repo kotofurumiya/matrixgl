@@ -135,10 +135,14 @@ values.fill(<span class="hljs-number">0</span>);
                        .mulByMatrix4(rotation)
                        .mulByMatrix4(scaling);
 </code></pre>
-				<p>If you want a rotation matrix about an arbitrary axis, use <code>Matrix4.rotationAround(axis, radian)</code>.</p>
+				<p>If you want a rotation matrix about an arbitrary axis, use <code>rotateAround(axis, radian)</code> .</p>
 				<pre><code class="lang-javascript"><span class="hljs-comment">// An axis vector must be normalized.</span>
 <span class="hljs-keyword">const</span> axis = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>).normalize();
-<span class="hljs-keyword">const</span> rotation = Matrix4.rotationAround(axis, <span class="hljs-built_in">Math</span>.PI);
+<span class="hljs-keyword">const</span> rotation = Matrix4.identity()
+                         .rotateAround(axis, <span class="hljs-built_in">Math</span>.PI);
+</code></pre>
+				<p>or use <code>Matrix4.rotationAround(axis, radian)</code>.</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> rotation = Matrix4.rotationAround(axis, <span class="hljs-built_in">Math</span>.PI);
 </code></pre>
 				<p>To build a &quot;look at&quot; matrix, use <code>lookAt</code> method.</p>
 				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
