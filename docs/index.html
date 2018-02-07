@@ -175,6 +175,15 @@
 <span class="hljs-comment">//　Convert the rotation quaternion to a rotation matrix.</span>
 <span class="hljs-keyword">const</span> rotation = q.toRotationMatrix4();
 </code></pre>
+				<p>To interpolate between two quaternions, use <code>slerp(other, t)</code>.</p>
+				<pre><code class="lang-javascript"><span class="hljs-comment">// To interpolate quaternions, they must be normalized.</span>
+<span class="hljs-keyword">const</span> q1 = <span class="hljs-keyword">new</span> Quaternion(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>).normalize();
+<span class="hljs-keyword">const</span> q2 = <span class="hljs-keyword">new</span> Quaternion(<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>).normalize();
+
+<span class="hljs-comment">// interpolate with t = 0.5.</span>
+<span class="hljs-comment">// t is from 0.0 to 1.0. </span>
+<span class="hljs-keyword">const</span> interpolated = q1.slerp(q2, <span class="hljs-number">0.5</span>);
+</code></pre>
 				<h2 id="usage-with-webgl">Usage with WebGL</h2>
 				<p>You can get <code>Float32Array</code> from <code>values</code> property of vectors or matrices.</p>
 				<p>So if you use MatrixGL with WebGL, just pass the vector&#39;s(or matrix&#39;s) <code>values</code>. </p>

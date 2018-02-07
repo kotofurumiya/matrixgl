@@ -1,4 +1,5 @@
-import {Float32Vector3, Float32Vector4} from "./float32vector";
+import { Float32Vector3, Float32Vector4 } from './float32vector';
+import { Quaternion } from './quaternion';
 
 /**
  * An interface for matrices;
@@ -205,6 +206,17 @@ export class Matrix4x4 implements Matrix {
       0.0,  0.0, 1.0, 0.0,
       0.0,  0.0, 0.0, 1.0
     );
+  }
+
+  /**
+   * Returns rotation matrix around `normalizedAxis`. `normalizedAxis` must be normalized.
+   * @param {Float32Vector3} normalizedAxis
+   * @param {number} radian
+   * @returns {Matrix4x4}
+   */
+  static rotationAround(normalizedAxis: Float32Vector3, radian: number) : Matrix4x4 {
+    const q = Quaternion.rotationAround(normalizedAxis, radian);
+    return q.toRotationMatrix4();
   }
 
   /**
