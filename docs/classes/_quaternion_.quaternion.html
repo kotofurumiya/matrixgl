@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Float32Vector3 | matrixgl</title>
+	<title>Quaternion | matrixgl</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_float32vector_.html">&quot;float32vector&quot;</a>
+					<a href="../modules/_quaternion_.html">&quot;quaternion&quot;</a>
 				</li>
 				<li>
-					<a href="_float32vector_.float32vector3.html">Float32Vector3</a>
+					<a href="_quaternion_.quaternion.html">Quaternion</a>
 				</li>
 			</ul>
-			<h1>Class Float32Vector3</h1>
+			<h1>Class Quaternion</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A 3-dimensional vector of single-precision float numbers.</p>
+						<p>Quaternion which is 4-dimensional complex number.
+						See <a href="https://en.wikipedia.org/wiki/Quaternion">Wikipedia</a>.</p>
 					</div>
 				</div>
 			</section>
@@ -80,19 +81,8 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="_vector_base_.vector3base.html" class="tsd-signature-type">Vector3Base</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">&gt;</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">Float32Vector3</span>
-							</li>
-						</ul>
+						<span class="target">Quaternion</span>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/_vector_base_.vector.html" class="tsd-signature-type">Vector</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -102,35 +92,38 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_float32vector_.float32vector3.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
+						<section class="tsd-index-section tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_float32vector_.float32vector3.html#_values" class="tsd-kind-icon">_values</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_quaternion_.quaternion.html#_values" class="tsd-kind-icon">_values</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_float32vector_.float32vector3.html#magnitude" class="tsd-kind-icon">magnitude</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_float32vector_.float32vector3.html#values" class="tsd-kind-icon">values</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_float32vector_.float32vector3.html#x" class="tsd-kind-icon">x</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_float32vector_.float32vector3.html#y" class="tsd-kind-icon">y</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_float32vector_.float32vector3.html#z" class="tsd-kind-icon">z</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#magnitude" class="tsd-kind-icon">magnitude</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#norm" class="tsd-kind-icon">norm</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#values" class="tsd-kind-icon">values</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#w" class="tsd-kind-icon">w</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#x" class="tsd-kind-icon">x</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#y" class="tsd-kind-icon">y</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#z" class="tsd-kind-icon">z</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_float32vector_.float32vector3.html#add" class="tsd-kind-icon">add</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_float32vector_.float32vector3.html#cross" class="tsd-kind-icon">cross</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_float32vector_.float32vector3.html#dot" class="tsd-kind-icon">dot</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_float32vector_.float32vector3.html#mulbyscalar" class="tsd-kind-icon">mul<wbr>ByScalar</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_float32vector_.float32vector3.html#normalize" class="tsd-kind-icon">normalize</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_float32vector_.float32vector3.html#sub" class="tsd-kind-icon">sub</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_float32vector_.float32vector3.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#dot" class="tsd-kind-icon">dot</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#mulbyscalar" class="tsd-kind-icon">mul<wbr>ByScalar</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#normalize" class="tsd-kind-icon">normalize</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#slerp" class="tsd-kind-icon">slerp</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#torotationmatrix4" class="tsd-kind-icon">to<wbr>Rotation<wbr>Matrix4</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_quaternion_.quaternion.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_quaternion_.quaternion.html#rotationaround" class="tsd-kind-icon">rotation<wbr>Around</a></li>
 							</ul>
 						</section>
 					</div>
@@ -142,13 +135,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Float32<wbr>Vector3<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, z<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Quaternion<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, z<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, w<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/float32vector.ts#L49">float32vector.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L9">quaternion.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -162,82 +155,155 @@
 								<li>
 									<h5>z: <span class="tsd-signature-type">number</span></h5>
 								</li>
+								<li>
+									<h5>w: <span class="tsd-signature-type">number</span></h5>
+								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="_values" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _values</h3>
 					<div class="tsd-signature tsd-kind-icon">_values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_vector_base_.vectorbase.html">VectorBase</a>.<a href="_vector_base_.vectorbase.html#_values">_values</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/vector_base.ts#L32">vector_base.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L9">quaternion.ts:9</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Values that the vector contains.</p>
-						</div>
-					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="magnitude" class="tsd-anchor"></a>
 					<h3>magnitude</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> magnitude<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_vector_base_.vectorbase.html">VectorBase</a>.<a href="_vector_base_.vectorbase.html#magnitude">magnitude</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/vector_base.ts#L38">vector_base.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L101">quaternion.ts:101</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Calc magnitude of the quaternion.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="norm" class="tsd-anchor"></a>
+					<h3>norm</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> norm<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L110">quaternion.ts:110</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Calc norm of the quaternion.
+									An alias for <code>magnitude</code>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="values" class="tsd-anchor"></a>
 					<h3>values</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> values<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_vector_base_.vectorbase.html">VectorBase</a>.<a href="_vector_base_.vectorbase.html#values">values</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/vector_base.ts#L34">vector_base.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L182">quaternion.ts:182</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns values of the quaternion.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Float32Array</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="w" class="tsd-anchor"></a>
+					<h3>w</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> w<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> w<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L142">quaternion.ts:142</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns w value of the vector.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L174">quaternion.ts:174</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the <code>value</code> as new w.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
 					<a name="x" class="tsd-anchor"></a>
 					<h3>x</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> x<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> x<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_vector_base_.vector3base.html">Vector3Base</a>.<a href="_vector_base_.vector3base.html#x">x</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/vector_base.ts#L94">vector_base.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L118">quaternion.ts:118</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -249,9 +315,8 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_vector_base_.vector3base.html">Vector3Base</a>.<a href="_vector_base_.vector3base.html#x">x</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/vector_base.ts#L118">vector_base.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L150">quaternion.ts:150</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -273,19 +338,18 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
 					<a name="y" class="tsd-anchor"></a>
 					<h3>y</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> y<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> y<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_vector_base_.vector3base.html">Vector3Base</a>.<a href="_vector_base_.vector3base.html#y">y</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/vector_base.ts#L102">vector_base.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L126">quaternion.ts:126</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -297,9 +361,8 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_vector_base_.vector3base.html">Vector3Base</a>.<a href="_vector_base_.vector3base.html#y">y</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/vector_base.ts#L126">vector_base.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L158">quaternion.ts:158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -321,19 +384,18 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
 					<a name="z" class="tsd-anchor"></a>
 					<h3>z</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> z<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> z<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_vector_base_.vector3base.html">Vector3Base</a>.<a href="_vector_base_.vector3base.html#z">z</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/vector_base.ts#L110">vector_base.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L134">quaternion.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -345,9 +407,8 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_vector_base_.vector3base.html">Vector3Base</a>.<a href="_vector_base_.vector3base.html#z">z</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/vector_base.ts#L134">vector_base.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L166">quaternion.ts:166</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -376,56 +437,28 @@
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/float32vector.ts#L62">float32vector.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L46">quaternion.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Add <code>other</code> to the vector and returns new <code>Float32Vector3</code>.</p>
+									<p>Adds the <code>other</code> to the quaternion and returns the sum.</p>
 								</div>
-								<p>This method does not mutate the vector.</p>
+								<p>This method does not mutate the quaternion.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>other: <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h5>
+									<h5>other: <a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="cross" class="tsd-anchor"></a>
-					<h3>cross</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">cross<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/float32vector.ts#L102">float32vector.ts:102</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Calculate cross product.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>other: <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -433,24 +466,24 @@
 					<a name="dot" class="tsd-anchor"></a>
 					<h3>dot</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">dot<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">dot<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/float32vector.ts#L93">float32vector.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L66">quaternion.ts:66</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Calculate dot product.</p>
+									<p>Calculates dot product.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>other: <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h5>
+									<h5>other: <a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -461,20 +494,20 @@
 					<a name="mulbyscalar" class="tsd-anchor"></a>
 					<h3>mul<wbr>ByScalar</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">mul<wbr>ByScalar<span class="tsd-signature-symbol">(</span>scalar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></li>
+						<li class="tsd-signature tsd-kind-icon">mul<wbr>ByScalar<span class="tsd-signature-symbol">(</span>scalar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/float32vector.ts#L84">float32vector.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L57">quaternion.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Multiply the vector by <code>scalar</code> and returns new <code>Float32Vector3</code>.</p>
+									<p>Multiplies the quaternion by <code>scalar</code> and returns the product.</p>
 								</div>
-								<p>This method does not mutate the vector.</p>
+								<p>This method does not mutate the quaternion.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -482,7 +515,7 @@
 									<h5>scalar: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -490,70 +523,142 @@
 					<a name="normalize" class="tsd-anchor"></a>
 					<h3>normalize</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">normalize<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></li>
+						<li class="tsd-signature tsd-kind-icon">normalize<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/float32vector.ts#L116">float32vector.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L32">quaternion.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Normalize the vector and returns new <code>Float32Vector3</code>.</p>
+									<p>Returns a normalized quaternion.</p>
 								</div>
-								<p>This method does not mutate the vector.</p>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="sub" class="tsd-anchor"></a>
-					<h3>sub</h3>
+					<a name="slerp" class="tsd-anchor"></a>
+					<h3>slerp</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">sub<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></li>
+						<li class="tsd-signature tsd-kind-icon">slerp<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/float32vector.ts#L73">float32vector.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L77">quaternion.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Subtract <code>other</code> from the vector and returns new <code>Float32Vector3</code>.</p>
+									<p>Calculates spherical linear interpolation(also known as Slerp) and returns new <code>Quaternion</code> between the quaternion and the other.</p>
 								</div>
-								<p>This method does not mutate the vector.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>other: <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h5>
+									<h5>other: <a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></h5>
+								</li>
+								<li>
+									<h5>t: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>0.0 &lt;= t &lt;= 1.0</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;{ chooseShorterAngle: true }</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Does not work currently. slerp chooses shorter angle regardless of this value.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>choose<wbr>Shorter<wbr>Angle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="torotationmatrix4" class="tsd-anchor"></a>
+					<h3>to<wbr>Rotation<wbr>Matrix4</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Rotation<wbr>Matrix4<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_matrix_.matrix4x4.html" class="tsd-signature-type">Matrix4x4</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L190">quaternion.ts:190</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the quaternion to a rotation matrix.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_matrix_.matrix4x4.html" class="tsd-signature-type">Matrix4x4</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="tostring" class="tsd-anchor"></a>
 					<h3>to<wbr>String</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_vector_base_.vector.html">Vector</a>.<a href="../interfaces/_vector_base_.vector.html#tostring">toString</a></p>
-								<p>Inherited from <a href="_vector_base_.vectorbase.html">VectorBase</a>.<a href="_vector_base_.vectorbase.html#tostring">toString</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/vector_base.ts#L43">vector_base.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L225">quaternion.ts:225</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns values as <code>String</code>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="rotationaround" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> rotation<wbr>Around</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">rotation<wbr>Around<span class="tsd-signature-symbol">(</span>normalizedAxis<span class="tsd-signature-symbol">: </span><a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a>, radian<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kotofurumiya/matrixgl/blob/5804b3e/src/quaternion.ts#L22">quaternion.ts:22</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a rotation quaternion around <code>normalizedAxis</code>.
+									<code>normalizedAxis</code> must be normalized.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>normalizedAxis: <a href="_float32vector_.float32vector3.html" class="tsd-signature-type">Float32Vector3</a></h5>
+								</li>
+								<li>
+									<h5>radian: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_quaternion_.quaternion.html" class="tsd-signature-type">Quaternion</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -565,7 +670,7 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_float32vector_.html">"float32vector"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -574,7 +679,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_matrix_.html">"matrix"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_quaternion_.html">"quaternion"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -584,72 +689,66 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_float32vector_.float32vector2.html" class="tsd-kind-icon">Float32<wbr>Vector2</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_float32vector_.float32vector3.html" class="tsd-kind-icon">Float32<wbr>Vector3</a>
+						<a href="_quaternion_.quaternion.html" class="tsd-kind-icon">Quaternion</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_float32vector_.float32vector3.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_quaternion_.quaternion.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="_float32vector_.float32vector3.html#_values" class="tsd-kind-icon">_values</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_quaternion_.quaternion.html#_values" class="tsd-kind-icon">_values</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-								<a href="_float32vector_.float32vector3.html#magnitude" class="tsd-kind-icon">magnitude</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#magnitude" class="tsd-kind-icon">magnitude</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-								<a href="_float32vector_.float32vector3.html#values" class="tsd-kind-icon">values</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#norm" class="tsd-kind-icon">norm</a>
 							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-								<a href="_float32vector_.float32vector3.html#x" class="tsd-kind-icon">x</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#values" class="tsd-kind-icon">values</a>
 							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-								<a href="_float32vector_.float32vector3.html#y" class="tsd-kind-icon">y</a>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#w" class="tsd-kind-icon">w</a>
 							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-								<a href="_float32vector_.float32vector3.html#z" class="tsd-kind-icon">z</a>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#x" class="tsd-kind-icon">x</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_float32vector_.float32vector3.html#add" class="tsd-kind-icon">add</a>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#y" class="tsd-kind-icon">y</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_float32vector_.float32vector3.html#cross" class="tsd-kind-icon">cross</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_float32vector_.float32vector3.html#dot" class="tsd-kind-icon">dot</a>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#z" class="tsd-kind-icon">z</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_float32vector_.float32vector3.html#mulbyscalar" class="tsd-kind-icon">mul<wbr>ByScalar</a>
+								<a href="_quaternion_.quaternion.html#add" class="tsd-kind-icon">add</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_float32vector_.float32vector3.html#normalize" class="tsd-kind-icon">normalize</a>
+								<a href="_quaternion_.quaternion.html#dot" class="tsd-kind-icon">dot</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_float32vector_.float32vector3.html#sub" class="tsd-kind-icon">sub</a>
+								<a href="_quaternion_.quaternion.html#mulbyscalar" class="tsd-kind-icon">mul<wbr>ByScalar</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_float32vector_.float32vector3.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#normalize" class="tsd-kind-icon">normalize</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#slerp" class="tsd-kind-icon">slerp</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#torotationmatrix4" class="tsd-kind-icon">to<wbr>Rotation<wbr>Matrix4</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_quaternion_.quaternion.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_quaternion_.quaternion.html#rotationaround" class="tsd-kind-icon">rotation<wbr>Around</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_float32vector_.float32vector4.html" class="tsd-kind-icon">Float32<wbr>Vector4</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_float32vector_.html#vector2" class="tsd-kind-icon">Vector2</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_float32vector_.html#vector3" class="tsd-kind-icon">Vector3</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_float32vector_.html#vector4" class="tsd-kind-icon">Vector4</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

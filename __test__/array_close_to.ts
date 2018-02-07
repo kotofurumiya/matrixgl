@@ -16,7 +16,7 @@ function arrayToBeCloseTo(actual: ArrayLike<number>, expected: ArrayLike<number>
     };
   }
 
-  const differentIndexList = [];
+  const differentIndexList: number[] = [];
   for(let i=0; i<actual.length; i++) {
     const diff = Math.abs(actual[i] - expected[i]);
     const elementPass = diff < delta;

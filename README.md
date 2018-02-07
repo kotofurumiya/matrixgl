@@ -137,6 +137,41 @@ const mvp = perspective.mulByMatrix4(view)
                        .mulByMatrix4(transform);
 ```
 
+## Quaternion
+
+MatrixGL supports quaternions for rotation.
+
+```javascript
+// Create a quaternion.
+const q = new Quaternion(1, 2, 3, 4);
+```
+
+To create a rotation matrix from a quaternion, use `Quaternion.rotationAround(axis, rad)` and `toRotationMatrix4()`.
+
+```javascript
+// An axis must be normalized.
+const axis = new Vector3(1, 2, 3).normalize();
+const radian = 45 * Math.PI / 180;
+
+// Create a quaternion from the axis and radian.
+const q = Quaternion.rotationAround(axis, radian);
+
+//　Convert the rotation quaternion to a rotation matrix.
+const rotation = q.toRotationMatrix4();
+```
+
+To interpolate between two quaternions, use `slerp(other, t)`.
+
+```javascript
+// To interpolate quaternions, they must be normalized.
+const q1 = new Quaternion(1, 2, 3, 4).normalize();
+const q2 = new Quaternion(5, 6, 7, 8).normalize();
+
+// interpolate with t = 0.5.
+// t is from 0.0 to 1.0. 
+const interpolated = q1.slerp(q2, 0.5);
+```
+
 ## Usage with WebGL
 
 You can get `Float32Array` from `values` property of vectors or matrices.

@@ -131,13 +131,13 @@
 </code></pre>
 				<p>To build a &quot;look at&quot; matrix, use <code>lookAt</code> method.</p>
 				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
-<span class="hljs-keyword">const</span> looAt = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>);
+<span class="hljs-keyword">const</span> lookAt = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>);
 <span class="hljs-keyword">const</span> cameraUpDirection = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>);
 
 <span class="hljs-keyword">const</span> view = Matrix4.lookAt(camera, lookAt, cameraUpDirection);
 </code></pre>
 				<p>If you need a projection matrix, use <code>orthographic</code> or <code>perspective</code> method.</p>
-				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> orthogonal = Matrix4.orthographic({
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> orthographic = Matrix4.orthographic({
   <span class="hljs-attr">top</span>: <span class="hljs-number">1</span>,
   <span class="hljs-attr">bottom</span>: <span class="hljs-number">-1</span>,
   <span class="hljs-attr">left</span>: <span class="hljs-number">-1</span>,
@@ -158,6 +158,22 @@
 				<p>And combine all above matrices to build a ModelViewProjection matrix.</p>
 				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mvp = perspective.mulByMatrix4(view)
                        .mulByMatrix4(transform);
+</code></pre>
+				<h2 id="quaternion">Quaternion</h2>
+				<p>MatrixGL supports quaternions for rotation.</p>
+				<pre><code class="lang-javascript"><span class="hljs-comment">// Create a quaternion.</span>
+<span class="hljs-keyword">const</span> q = <span class="hljs-keyword">new</span> Quaternion(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+</code></pre>
+				<p>To create a rotation matrix from a quaternion, use <code>Quaternion.rotationAround(axis, rad)</code> and <code>toRotationMatrix4()</code>.</p>
+				<pre><code class="lang-javascript"><span class="hljs-comment">// An axis must be normalized.</span>
+<span class="hljs-keyword">const</span> axis = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>).normalize();
+<span class="hljs-keyword">const</span> radian = <span class="hljs-number">45</span> * <span class="hljs-built_in">Math</span>.PI / <span class="hljs-number">180</span>;
+
+<span class="hljs-comment">// Create a quaternion from the axis and radian.</span>
+<span class="hljs-keyword">const</span> q = Quaternion.rotationAround(axis, radian);
+
+<span class="hljs-comment">//　Convert the rotation quaternion to a rotation matrix.</span>
+<span class="hljs-keyword">const</span> rotation = q.toRotationMatrix4();
 </code></pre>
 				<h2 id="usage-with-webgl">Usage with WebGL</h2>
 				<p>You can get <code>Float32Array</code> from <code>values</code> property of vectors or matrices.</p>
@@ -193,6 +209,9 @@ gl.uniformMatrix4fv(mvpLocation, <span class="hljs-literal">false</span>, mvp.va
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_matrix_.html">"matrix"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_quaternion_.html">"quaternion"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_vector_base_.html">"vector_<wbr>base"</a>
