@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+
+* Add `xy` to `Vector3` and `xyz` to `Vector4`, that return the part of the vector.
+* Add `rotateAround(axis, radian)` to `Matrix4` and static `Matrix4.rotationAround(axis, radian)`.
+* Improve `toString()` of vectors.
+
 ## 0.1.0
 
 * Add a Quaternion class.
