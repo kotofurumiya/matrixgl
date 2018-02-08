@@ -81,6 +81,11 @@ describe('Vector3', () => {
     const vec = new Vector3(0.0, 0.0, 0.0);
     expect(vec.normalize().values).arrayToBeCloseTo([0.0, 0.0, 0.0], delta);
   });
+
+  test('Get xy', () => {
+    const vec = new Vector3(1, 2, 3);
+    expect(vec.xy.values).arrayToBeCloseTo([1, 2], delta);
+  });
 });
 
 //
@@ -105,5 +110,10 @@ describe('Vector4', () => {
     const vec1 = new Vector4(1, 2, 3, 4);
 
     expect(vec1.mulByScalar(5).values).arrayToBeCloseTo([5, 10, 15, 20], delta);
+  });
+
+  test('Get xyz', () => {
+    const vec = new Vector4(1, 2, 3, 4);
+    expect(vec.xyz.values).arrayToBeCloseTo([1, 2, 3], delta);
   });
 });

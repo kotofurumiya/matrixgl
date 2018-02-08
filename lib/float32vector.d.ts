@@ -77,6 +77,11 @@ export declare class Float32Vector3 extends Vector3Base<Float32Array> {
      * @returns {Float32Vector3}
      */
     normalize(): Float32Vector3;
+    /**
+     * Returns xy values of the vector as `Float32Vector2`.
+     * @returns {Float32Vector2}
+     */
+    readonly xy: Float32Vector2;
 }
 /**
  * A 4-dimensional vector of single-precision float numbers.
@@ -107,6 +112,11 @@ export declare class Float32Vector4 extends Vector4Base<Float32Array> {
      * @returns {Float32Vector4}
      */
     mulByScalar(scalar: number): Float32Vector4;
+    /**
+     * Returns xyz values of the vector as `Float32Vector3`.
+     * @returns {Float32Vector3}
+     */
+    readonly xyz: Float32Vector3;
 }
 /**
  * An alias for `Float32Vector2`.
