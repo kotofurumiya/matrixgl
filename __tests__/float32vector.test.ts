@@ -1,5 +1,5 @@
 import { Vector2, Vector3, Vector4 } from '../src/index';
-import './array_close_to';
+import './lib/array_close_to';
 
 const delta = 0.001;
 
