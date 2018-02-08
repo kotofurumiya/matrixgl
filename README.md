@@ -4,10 +4,10 @@ MatrixGL is yet another matrix library for WebGL.
 
 ## Install without Node.js
 
-Just download **build/matrixgl.min.js**, and you can ignore all other files(These files are for Node.js).
+Download the zip file from [Releases page on GitHub](https://github.com/kotofurumiya/matrixgl/releases), and unzip the file.
 
-And put the file(matrixgl.min.js) into your directory.
- 
+You will see **matrixgl.min.js** file in the **build** directory. Copy the file(matrixgl.min.js) into your directory. You can ignore all other files(These files are for Node.js).
+
 Then add below code to your HTML file.
 
 ```html
@@ -28,12 +28,12 @@ $ npm install matrixgl --save
 Then, import MatrixGL in JavaScript.
 
 ```javascript
-const { Vector3, Vector4, Matrix4 } = require('matrixgl');
+const { Vector3, Vector4, Matrix4, Quaternion } = require('matrixgl');
 ```
 
 ## Basic Usage
 
-MatrixGL has Vector classes and Matrix classes.
+MatrixGL has Vector, Matrix and Quaternion class.
 
 You can use it simply. For example:
 
@@ -60,7 +60,7 @@ const scalar = 5;
 
 // calculate
 const vecSum = vec1.add(vec2);
-const vecSub = vec1.sub(vec2);
+const vecDiff = vec1.sub(vec2);
 const vecProd = vec1.mulByScalar(scalar);
 const vecMag = vec1.magnitude;
 ``` 
@@ -74,18 +74,27 @@ const mat = new Matrix2(1, 2, 3, 4);
 console.log(mat.values);
 ```
 
-Matrices' values are stored in column major order which is WebGL's default order.
+Matrices' values are stored in "column major order" which is the default order of WebGL. This means `new Matrix(1, 2, 3, 4);` represents the first row is `[1, 3]` and second row is `[2, 4]`.
 
-In addition to basic methods, `Matrix4` class has special methods. You can generate a transform matrix easily with these methods.
+If you are bored with enumerating numbers 16 times to create a Matrix4, please use a spread operator. 
 
 ```javascript
-const transform = Matrix4.identity()
-                         .translate(1, 2, 3)
-                         .rotateX(Math.PI)
-                         .scale(5, 5, 5);
+const values = new Array(16);
+values.fill(0);
+
+const matrix = new Matrix4(...values);
 ```
 
-Or you can build the transform matrix manually.
+In addition to basic methods, `Matrix4` class has special methods. You can generate a model matrix easily with these methods.
+
+```javascript
+const model = Matrix4.identity()
+                      .translate(1, 2, 3)
+                      .rotateX(Math.PI)
+                      .scale(5, 5, 5);
+```
+
+Or you can build a model matrix manually.
 
 ```javascript
 const identity = Matrix4.identity();
@@ -93,9 +102,23 @@ const scaling = Matrix4.scaling(5, 5, 5);
 const rotation = Matrix4.rotationX(Math.PI);
 const translation = Matrix4.translation(1, 2, 3);
 
-const transform = identity.mulByMatrix4(translation)
-                          .mulByMatrix4(rotation)
-                          .mulByMatrix4(scaling);
+const model = identity.mulByMatrix4(translation)
+                       .mulByMatrix4(rotation)
+                       .mulByMatrix4(scaling);
+```
+
+If you want a rotation matrix about an arbitrary axis, use `rotateAround(axis, radian)` .
+```javascript
+// An axis vector must be normalized.
+const axis = new Vector3(1, 2, 3).normalize();
+const rotation = Matrix4.identity()
+                         .rotateAround(axis, Math.PI);
+```
+
+or use `Matrix4.rotationAround(axis, radian)`.
+
+```javascript
+const rotation = Matrix4.rotationAround(axis, Math.PI);
 ```
 
 To build a "look at" matrix, use `lookAt` method.
@@ -134,7 +157,7 @@ And combine all above matrices to build a ModelViewProjection matrix.
 
 ```javascript
 const mvp = perspective.mulByMatrix4(view)
-                       .mulByMatrix4(transform);
+                       .mulByMatrix4(model);
 ```
 
 ## Quaternion
@@ -174,7 +197,7 @@ const interpolated = q1.slerp(q2, 0.5);
 
 ## Usage with WebGL
 
-You can get `Float32Array` from `values` property of vectors or matrices.
+You can get `Float32Array` from `values` property of vectors, matrices or quaternions.
 
 So if you use MatrixGL with WebGL, just pass the vector's(or matrix's) `values`. 
 

@@ -41,7 +41,8 @@ export abstract class VectorBase<T extends TypedArrayLike> implements Vector<T> 
   }
 
   toString(): string {
-    return this._values.toString();
+    const dimension = this._values.length;
+    return `Vector${dimension}(${this._values.join(', ')})`;
   }
 }
 

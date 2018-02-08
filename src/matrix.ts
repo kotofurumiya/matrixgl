@@ -1,4 +1,5 @@
-import {Float32Vector3, Float32Vector4} from "./float32vector";
+import { Float32Vector3, Float32Vector4 } from './float32vector';
+import { Quaternion } from './quaternion';
 
 /**
  * An interface for matrices;
@@ -208,6 +209,17 @@ export class Matrix4x4 implements Matrix {
   }
 
   /**
+   * Returns rotation matrix around `normalizedAxis`. `normalizedAxis` must be normalized.
+   * @param {Float32Vector3} normalizedAxis
+   * @param {number} radian
+   * @returns {Matrix4x4}
+   */
+  static rotationAround(normalizedAxis: Float32Vector3, radian: number) : Matrix4x4 {
+    const q = Quaternion.rotationAround(normalizedAxis, radian);
+    return q.toRotationMatrix4();
+  }
+
+  /**
    * Returns "look at" matrix.
    * @param {Float32Vector3} cameraPosition
    * @param {Float32Vector3} lookAtPosition
@@ -408,6 +420,19 @@ export class Matrix4x4 implements Matrix {
   rotateZ(radian: number): Matrix4x4 {
     const rz: Matrix4x4 = Matrix4x4.rotationZ(radian);
     return this.mulByMatrix4x4(rz);
+  }
+
+  /**
+   * Rotate the matrix around the `normalizedAxis` and return new Matrix4x4.
+   *
+   * This method does not mutate the matrix.
+   * @param {Float32Vector3} normalizedAxis
+   * @param {number} radian
+   * @returns {Matrix4x4}
+   */
+  rotateAround(normalizedAxis: Float32Vector3, radian: number): Matrix4x4 {
+    const r = Matrix4x4.rotationAround(normalizedAxis, radian);
+    return this.mulByMatrix4x4(r);
   }
 
   get values(): Float32Array {

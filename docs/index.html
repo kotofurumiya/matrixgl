@@ -67,8 +67,8 @@
 				<h1 id="matrixgl">MatrixGL</h1>
 				<p>MatrixGL is yet another matrix library for WebGL.</p>
 				<h2 id="install-without-node-js">Install without Node.js</h2>
-				<p>Just download <strong>build/matrixgl.min.js</strong>, and you can ignore all other files(These files are for Node.js).</p>
-				<p>And put the file(matrixgl.min.js) into your directory.</p>
+				<p>Download the zip file from <a href="https://github.com/kotofurumiya/matrixgl/releases">Releases page on GitHub</a>, and unzip the file.</p>
+				<p>You will see <strong>matrixgl.min.js</strong> file in the <strong>build</strong> directory. Copy the file(matrixgl.min.js) into your directory. You can ignore all other files(These files are for Node.js).</p>
 				<p>Then add below code to your HTML file.</p>
 				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"matrixgl.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
@@ -79,10 +79,10 @@
 				<p>Run the install command.</p>
 				<pre><code><span class="hljs-meta">$</span><span class="bash"> npm install matrixgl --save</span>
 </code></pre><p>Then, import MatrixGL in JavaScript.</p>
-				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> { Vector3, Vector4, Matrix4 } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'matrixgl'</span>);
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> { Vector3, Vector4, Matrix4, Quaternion } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'matrixgl'</span>);
 </code></pre>
 				<h2 id="basic-usage">Basic Usage</h2>
-				<p>MatrixGL has Vector classes and Matrix classes.</p>
+				<p>MatrixGL has Vector, Matrix and Quaternion class.</p>
 				<p>You can use it simply. For example:</p>
 				<pre><code class="lang-javascript"><span class="hljs-comment">// create 4-dimensional vector.</span>
 <span class="hljs-keyword">const</span> vec = <span class="hljs-keyword">new</span> Vector4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
@@ -103,7 +103,7 @@
 
 <span class="hljs-comment">// calculate</span>
 <span class="hljs-keyword">const</span> vecSum = vec1.add(vec2);
-<span class="hljs-keyword">const</span> vecSub = vec1.sub(vec2);
+<span class="hljs-keyword">const</span> vecDiff = vec1.sub(vec2);
 <span class="hljs-keyword">const</span> vecProd = vec1.mulByScalar(scalar);
 <span class="hljs-keyword">const</span> vecMag = vec1.magnitude;
 </code></pre>
@@ -112,22 +112,37 @@
 				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mat = <span class="hljs-keyword">new</span> Matrix2(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
 <span class="hljs-built_in">console</span>.log(mat.values);
 </code></pre>
-				<p>Matrices&#39; values are stored in column major order which is WebGL&#39;s default order.</p>
-				<p>In addition to basic methods, <code>Matrix4</code> class has special methods. You can generate a transform matrix easily with these methods.</p>
-				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> transform = Matrix4.identity()
-                         .translate(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
-                         .rotateX(<span class="hljs-built_in">Math</span>.PI)
-                         .scale(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+				<p>Matrices&#39; values are stored in &quot;column major order&quot; which is the default order of WebGL. This means <code>new Matrix(1, 2, 3, 4);</code> represents the first row is <code>[1, 3]</code> and second row is <code>[2, 4]</code>.</p>
+				<p>If you are bored with enumerating numbers 16 times to create a Matrix4, please use a spread operator. </p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> values = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">16</span>);
+values.fill(<span class="hljs-number">0</span>);
+
+<span class="hljs-keyword">const</span> matrix = <span class="hljs-keyword">new</span> Matrix4(...values);
 </code></pre>
-				<p>Or you can build the transform matrix manually.</p>
+				<p>In addition to basic methods, <code>Matrix4</code> class has special methods. You can generate a model matrix easily with these methods.</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> model = Matrix4.identity()
+                      .translate(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+                      .rotateX(<span class="hljs-built_in">Math</span>.PI)
+                      .scale(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+</code></pre>
+				<p>Or you can build a model matrix manually.</p>
 				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> identity = Matrix4.identity();
 <span class="hljs-keyword">const</span> scaling = Matrix4.scaling(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
 <span class="hljs-keyword">const</span> rotation = Matrix4.rotationX(<span class="hljs-built_in">Math</span>.PI);
 <span class="hljs-keyword">const</span> translation = Matrix4.translation(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
 
-<span class="hljs-keyword">const</span> transform = identity.mulByMatrix4(translation)
-                          .mulByMatrix4(rotation)
-                          .mulByMatrix4(scaling);
+<span class="hljs-keyword">const</span> model = identity.mulByMatrix4(translation)
+                       .mulByMatrix4(rotation)
+                       .mulByMatrix4(scaling);
+</code></pre>
+				<p>If you want a rotation matrix about an arbitrary axis, use <code>rotateAround(axis, radian)</code> .</p>
+				<pre><code class="lang-javascript"><span class="hljs-comment">// An axis vector must be normalized.</span>
+<span class="hljs-keyword">const</span> axis = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>).normalize();
+<span class="hljs-keyword">const</span> rotation = Matrix4.identity()
+                         .rotateAround(axis, <span class="hljs-built_in">Math</span>.PI);
+</code></pre>
+				<p>or use <code>Matrix4.rotationAround(axis, radian)</code>.</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> rotation = Matrix4.rotationAround(axis, <span class="hljs-built_in">Math</span>.PI);
 </code></pre>
 				<p>To build a &quot;look at&quot; matrix, use <code>lookAt</code> method.</p>
 				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
@@ -157,7 +172,7 @@
 </code></pre>
 				<p>And combine all above matrices to build a ModelViewProjection matrix.</p>
 				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mvp = perspective.mulByMatrix4(view)
-                       .mulByMatrix4(transform);
+                       .mulByMatrix4(model);
 </code></pre>
 				<h2 id="quaternion">Quaternion</h2>
 				<p>MatrixGL supports quaternions for rotation.</p>
@@ -175,8 +190,17 @@
 <span class="hljs-comment">//　Convert the rotation quaternion to a rotation matrix.</span>
 <span class="hljs-keyword">const</span> rotation = q.toRotationMatrix4();
 </code></pre>
+				<p>To interpolate between two quaternions, use <code>slerp(other, t)</code>.</p>
+				<pre><code class="lang-javascript"><span class="hljs-comment">// To interpolate quaternions, they must be normalized.</span>
+<span class="hljs-keyword">const</span> q1 = <span class="hljs-keyword">new</span> Quaternion(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>).normalize();
+<span class="hljs-keyword">const</span> q2 = <span class="hljs-keyword">new</span> Quaternion(<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>).normalize();
+
+<span class="hljs-comment">// interpolate with t = 0.5.</span>
+<span class="hljs-comment">// t is from 0.0 to 1.0. </span>
+<span class="hljs-keyword">const</span> interpolated = q1.slerp(q2, <span class="hljs-number">0.5</span>);
+</code></pre>
 				<h2 id="usage-with-webgl">Usage with WebGL</h2>
-				<p>You can get <code>Float32Array</code> from <code>values</code> property of vectors or matrices.</p>
+				<p>You can get <code>Float32Array</code> from <code>values</code> property of vectors, matrices or quaternions.</p>
 				<p>So if you use MatrixGL with WebGL, just pass the vector&#39;s(or matrix&#39;s) <code>values</code>. </p>
 				<pre><code class="lang-javascript"><span class="hljs-comment">// Buffer</span>
 gl.bufferData(gl.ARRAY_BUFFER, vec1.values, gl.STATIC_DRAW);

@@ -16,7 +16,7 @@ export class Float32Vector2 extends Vector2Base<Float32Array> {
    * @param {Float32Vector2} other
    * @returns {Float32Vector2}
    */
-  public add(other: Float32Vector2): Float32Vector2 {
+  add(other: Float32Vector2): Float32Vector2 {
     return new Float32Vector2(this.x + other.x, this.y + other.y);
   }
 
@@ -27,7 +27,7 @@ export class Float32Vector2 extends Vector2Base<Float32Array> {
    * @param {Float32Vector2} other
    * @returns {Float32Vector2}
    */
-  public sub(other: Float32Vector2): Float32Vector2 {
+  sub(other: Float32Vector2): Float32Vector2 {
     return new Float32Vector2(this.x - other.x, this.y - other.y);
   }
 
@@ -38,7 +38,7 @@ export class Float32Vector2 extends Vector2Base<Float32Array> {
    * @param {number} scalar
    * @returns {Float32Vector2}
    */
-  public mulByScalar(scalar: number): Float32Vector2 {
+  mulByScalar(scalar: number): Float32Vector2 {
     return new Float32Vector2(this.x * scalar, this.y * scalar);
   }
 }
@@ -118,6 +118,14 @@ export class Float32Vector3 extends Vector3Base<Float32Array> {
     if(mag === 0) { return this; }
     return new Float32Vector3(this.x / mag, this.y / mag, this.z / mag);
   }
+
+  /**
+   * Returns xy values of the vector as `Float32Vector2`.
+   * @returns {Float32Vector2}
+   */
+  get xy(): Float32Vector2 {
+    return new Float32Vector2(this.x, this.y);
+  }
 }
 
 /**
@@ -160,6 +168,14 @@ export class Float32Vector4 extends Vector4Base<Float32Array> {
    */
   mulByScalar(scalar: number): Float32Vector4 {
     return new Float32Vector4(this.x * scalar, this.y * scalar, this.z * scalar, this.w * scalar);
+  }
+
+  /**
+   * Returns xyz values of the vector as `Float32Vector3`.
+   * @returns {Float32Vector3}
+   */
+  get xyz(): Float32Vector3 {
+    return new Float32Vector3(this.x, this.y, this.z);
   }
 }
 

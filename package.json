@@ -1,6 +1,6 @@
 {
   "name": "matrixgl",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Yet another matrix library for WebGL",
   "keywords": [
     "webgl",
@@ -32,25 +32,11 @@
   },
   "devDependencies": {
     "@types/jest": "^22.1.1",
-    "jest": "^22.1.4",
+    "jest": "^22.2.1",
     "touch": "^3.1.0",
     "ts-jest": "^22.0.3",
     "typedoc": "^0.10.0",
     "typescript": "^2.7.1",
     "webpack": "^3.10.0"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
   }
 }

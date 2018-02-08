@@ -1,6 +1,6 @@
 import { Matrix4 } from '../src/index';
 import { Vector3 } from "../src/float32vector";
-import './array_close_to';
+import './lib/array_close_to';
 
 const delta = 0.001;
 
