@@ -131,7 +131,7 @@ const cameraUpDirection = new Vector3(7, 8, 9);
 const view = Matrix4.lookAt(camera, lookAt, cameraUpDirection);
 ```
 
-If you need a projection matrix, use `orthographic` or `perspective` method.
+If you need a projection matrix, use `Matrix4.orthographic` or `Matrix4.perspective` method.
 
 ```javascript
 const orthographic = Matrix4.orthographic({
@@ -144,10 +144,8 @@ const orthographic = Matrix4.orthographic({
 });
 
 const perspective = Matrix4.perspective({
-  top: 1,
-  bottom: -1,
-  left: -1,
-  right: 1,
+  fovYRadian: 60 * Math.PI / 180,
+  aspectRatio: 1,
   near: 1,
   far: 2
 });

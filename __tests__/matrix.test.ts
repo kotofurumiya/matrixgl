@@ -53,20 +53,35 @@ describe('Matrix4', () => {
     ], delta);
   });
 
-  test('Projection Matrix Perspective', () => {
+  test('Projection Matrix Frustum', () => {
     const left   = -40;
     const right  = 40;
     const top    = 40;
     const bottom = -40;
     const near   = 30;
     const far    = 150;
-    const projection = Matrix4.perspective({ top, right, left, bottom, near, far });
+    const frustum = Matrix4.frustum({ top, right, left, bottom, near, far });
 
-    expect(projection.values).arrayToBeCloseTo([
+    expect(frustum.values).arrayToBeCloseTo([
       0.75,0,0,0,
       0,0.75,0,0,
       0,0,-1.5,-1,
       0,0,-75,0
+    ], delta);
+  });
+
+  test('Projection Matrix Perspective', () => {
+    const fovY = 60 * Math.PI / 180;
+    const aspectRatio = 500 / 500;
+    const near = 30;
+    const far  = 300;
+    const projection = Matrix4.perspective({ fovYRadian: fovY, aspectRatio, near, far });
+
+    expect(projection.values).arrayToBeCloseTo([
+      1.7320507764816284,0,0,0,
+      0,1.7320507764816284,0,0,
+      0,0,-1.2222222089767456,-1,
+      0,0,-66.66666412353516,0
     ], delta);
   });
 });
