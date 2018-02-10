@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+* Fix v1.0.0 did not apply changes to `matrixgl.min.js` and documents.
+
 ## 1.0.0
 
 * **\[Breaking Change\]** Rename `perspective` to `frustum`.
