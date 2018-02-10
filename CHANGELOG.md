@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0
+
+* **\[Breaking Change\]** Rename `perspective` to `frustum`.
+* Add new `Matrix4.perspective()`.
+
 ## 0.2.0
 
 * Add `xy` to `Vector3` and `xyz` to `Vector4`, that return the part of the vector.
