@@ -151,7 +151,7 @@ values.fill(<span class="hljs-number">0</span>);
 
 <span class="hljs-keyword">const</span> view = Matrix4.lookAt(camera, lookAt, cameraUpDirection);
 </code></pre>
-				<p>If you need a projection matrix, use <code>orthographic</code> or <code>perspective</code> method.</p>
+				<p>If you need a projection matrix, use <code>Matrix4.orthographic</code> or <code>Matrix4.perspective</code> method.</p>
 				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> orthographic = Matrix4.orthographic({
   <span class="hljs-attr">top</span>: <span class="hljs-number">1</span>,
   <span class="hljs-attr">bottom</span>: <span class="hljs-number">-1</span>,
@@ -162,10 +162,8 @@ values.fill(<span class="hljs-number">0</span>);
 });
 
 <span class="hljs-keyword">const</span> perspective = Matrix4.perspective({
-  <span class="hljs-attr">top</span>: <span class="hljs-number">1</span>,
-  <span class="hljs-attr">bottom</span>: <span class="hljs-number">-1</span>,
-  <span class="hljs-attr">left</span>: <span class="hljs-number">-1</span>,
-  <span class="hljs-attr">right</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">fovYRadian</span>: <span class="hljs-number">60</span> * <span class="hljs-built_in">Math</span>.PI / <span class="hljs-number">180</span>,
+  <span class="hljs-attr">aspectRatio</span>: <span class="hljs-number">1</span>,
   <span class="hljs-attr">near</span>: <span class="hljs-number">1</span>,
   <span class="hljs-attr">far</span>: <span class="hljs-number">2</span>
 });

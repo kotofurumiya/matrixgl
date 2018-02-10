@@ -121,15 +121,26 @@ export declare class Matrix4x4 implements Matrix {
         far: number;
     }): Matrix4x4;
     /**
-     * Returns a perspective projection matrix.
+     * Returns a frustrum projection matrix.
      * @param {{top: number; bottom: number; left: number; right: number; near: number; far: number}} argsObject
      * @returns {Matrix4x4}
      */
-    static perspective(argsObject: {
+    static frustum(argsObject: {
         top: number;
         bottom: number;
         left: number;
         right: number;
+        near: number;
+        far: number;
+    }): Matrix4x4;
+    /**
+     * Returns a perspective projection matrix.
+     * @param {{fovY: number; aspect: number; near: number; far: number}} argsObject
+     * @returns {Matrix4x4}
+     */
+    static perspective(argsObject: {
+        fovYRadian: number;
+        aspectRatio: number;
         near: number;
         far: number;
     }): Matrix4x4;
