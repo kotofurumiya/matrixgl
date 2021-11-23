@@ -22,13 +22,17 @@ Then add below code to your HTML file.
 Run the install command.
 
 ```
-$ npm install matrixgl --save
+$ npm install matrixgl
 ```
 
-Then, import MatrixGL in JavaScript.
+Then, import MatrixGL in your script.
 
-```javascript
+```typescript
+// JavaScript(CommonJS)
 const { Vector3, Vector4, Matrix4, Quaternion } = require('matrixgl');
+
+// TypeScript or Modern JavaScript(ES Modules)
+import { Vector3, Vector4, Matrix4, Quaternion } from 'matrixgl';
 ```
 
 ## Basic Usage
@@ -63,7 +67,7 @@ const vecSum = vec1.add(vec2);
 const vecDiff = vec1.sub(vec2);
 const vecProd = vec1.mulByScalar(scalar);
 const vecMag = vec1.magnitude;
-``` 
+```
 
 **Note: MatrixGL's API does not modify the original vector/matrix unlike ordinary OpenGL matrix libraries. So you should assign the result to variables**
 
@@ -76,7 +80,7 @@ console.log(mat.values);
 
 Matrices' values are stored in "column major order" which is the default order of WebGL. This means `new Matrix(1, 2, 3, 4);` represents the first row is `[1, 3]` and second row is `[2, 4]`.
 
-If you are bored with enumerating numbers 16 times to create a Matrix4, please use a spread operator. 
+If you are bored with enumerating numbers 16 times to create a Matrix4, please use a spread operator.
 
 ```javascript
 const values = new Array(16);
@@ -89,9 +93,9 @@ In addition to basic methods, `Matrix4` class has special methods. You can gener
 
 ```javascript
 const model = Matrix4.identity()
-                      .translate(1, 2, 3)
-                      .rotateX(Math.PI)
-                      .scale(5, 5, 5);
+                     .translate(1, 2, 3)
+                     .rotateX(Math.PI)
+                     .scale(5, 5, 5);
 ```
 
 Or you can build a model matrix manually.
@@ -103,8 +107,8 @@ const rotation = Matrix4.rotationX(Math.PI);
 const translation = Matrix4.translation(1, 2, 3);
 
 const model = identity.mulByMatrix4(translation)
-                       .mulByMatrix4(rotation)
-                       .mulByMatrix4(scaling);
+                      .mulByMatrix4(rotation)
+                      .mulByMatrix4(scaling);
 ```
 
 If you want a rotation matrix about an arbitrary axis, use `rotateAround(axis, radian)` .
@@ -189,7 +193,7 @@ const q1 = new Quaternion(1, 2, 3, 4).normalize();
 const q2 = new Quaternion(5, 6, 7, 8).normalize();
 
 // interpolate with t = 0.5.
-// t is from 0.0 to 1.0. 
+// t is from 0.0 to 1.0.
 const interpolated = q1.slerp(q2, 0.5);
 ```
 
@@ -197,7 +201,7 @@ const interpolated = q1.slerp(q2, 0.5);
 
 You can get `Float32Array` from `values` property of vectors, matrices or quaternions.
 
-So if you use MatrixGL with WebGL, just pass the vector's(or matrix's) `values`. 
+So if you use MatrixGL with WebGL, just pass the vector's(or matrix's) `values`.
 
 ```javascript
 // Buffer
@@ -227,4 +231,4 @@ $ npm run build
 
 ## License
 
-MIT License. See [LICENSE.md](https://github.com/kotofurumiya/matrixgl/blob/master/LICENSE.md).
+Zlib License. See [LICENSE.md](https://github.com/kotofurumiya/matrixgl/blob/master/LICENSE.md).
