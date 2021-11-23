@@ -1,6 +1,6 @@
 {
   "name": "matrixgl",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Yet another matrix library for WebGL",
   "keywords": [
     "webgl",
@@ -8,13 +8,19 @@
     "matrix",
     "vector"
   ],
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "type": "module",
+  "main": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
   "author": "Koto Furumiya <kotofurumiya@gmail.com>",
-  "license": "MIT",
+  "license": "Zlib",
   "files": [
     "lib/"
   ],
+  "exports": {
+    "import": "./lib/esm/index.js",
+    "require": "./lib/csm/index.js",
+    "default": "./lib/esm/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kotofurumiya/matrixgl.git"
@@ -26,17 +32,18 @@
   "homepage": "https://github.com/kotofurumiya/matrixgl",
   "scripts": {
     "typedoc": "typedoc ./src --out ./docs --readme README.md && nodetouch ./docs/.nojekyll",
-    "test": "jest",
-    "webpack": "webpack",
-    "build": "tsc && npm run typedoc && webpack"
+    "test": "uvu -r tsm __tests__",
+    "build:esm": "esbuild src/*.ts --bundle --platform=node --format=esm --target=es2020 --outdir=lib/esm && tsc --emitDeclarationOnly --outDir lib/esm",
+    "build:cjs": "esbuild src/*.ts --bundle --platform=node --format=cjs --target=es2020 --outdir=lib/cjs && tsc --emitDeclarationOnly --outDir lib/cjs",
+    "build:browser": "esbuild src/index.ts --bundle --minify --platform=browser --target=es2020 --outfile=build/matrixgl.min.js",
+    "build": "npm run build:esm && npm run build:cjs && npm run build:browser && npm run typedoc"
   },
   "devDependencies": {
-    "@types/jest": "^22.1.1",
-    "jest": "^22.2.1",
+    "esbuild": "^0.13.15",
     "touch": "^3.1.0",
-    "ts-jest": "^22.0.3",
-    "typedoc": "^0.10.0",
-    "typescript": "^2.7.1",
-    "webpack": "^3.10.0"
+    "tsm": "^2.1.4",
+    "typedoc": "^0.22.9",
+    "typescript": "^4.4.4",
+    "uvu": "^0.5.2"
   }
 }
